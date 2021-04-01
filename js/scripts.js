@@ -17,11 +17,11 @@ function showPosition(position) {
     let apiKey = "b7953aa5c048acff876e1678457a3773";
     //api call
     let url1 = "https://api.openweathermap.org/data/2.5/onecall?";
-    let url2 = "lat=" + lat;
-    let url3 = "&lon=" + lon;
-    let url4 = "&units=metric&lang=el&exclude=minutely,alerts&"
-    let url5 = "appid=" + apiKey;
-    let url = url1 + url2 + url3 + url4 + url5;
+    let laturl = "lat=" + lat;
+    let lonurl = "&lon=" + lon;
+    let restUrl = "&units=metric&lang=el&exclude=minutely,alerts&"
+    let apikeyUrl = "appid=" + apiKey;
+    let url = url1 + laturl + lonurl + restUrl + apikeyUrl;
     fetch(url)
         .then((response) => response.json())
         .then((data) => {
@@ -32,7 +32,6 @@ function showPosition(position) {
 function getData(data) {
     let country = data.timezone;
     country = country.toUpperCase();
-    let main = data.current.weather[0].main;
     let desc = data.current.weather[0].description;
     desc = desc.toUpperCase();
     let temp = Math.round(data.current.temp);
@@ -49,9 +48,7 @@ function getData(data) {
 
     //daily data
     let tommorowTemp = Math.round(data.daily[0].temp.day);
-    let tommorowMain = data.daily[0].weather[0].main;
     let nextday1Temp = Math.round(data.daily[1].temp.day);
-    let nextday1Main = data.daily[1].weather[0].main;
 
     //time
     let timeNow = new Date().getHours();
