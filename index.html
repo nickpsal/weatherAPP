@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>WeatherAPP</title>
+    <!-- MDB icon -->
+    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+</head>
+
+<body>
+    <div class="container my-5">
+        <div class="row d-flex justify-content-center text-white">
+            <div class="col-xs-7">
+                <div id = "wrapper-background" class="card bg-image shadow-1-strong" style="background-image: url('img/thunderstorm.gif')">
+                    <!-- Main Current Data-->
+                    <div class="card-header text-center border-0">
+                        <p class="h2 mb-1" id="wrapper-name"></p>
+                        <p class="mb-1" id="wrapper-desc"></p>
+                        <p class="display-1 mb-1" id="wrapper-temp"></p>
+                        <span>Βαρομετρική Πίεση: <span id="wrapper-pressure"></span></span>
+                        <span class="mx-2">|</span>
+                        <span>Υγρασία: <span id="wrapper-humidity"> </span> </span>
+                    </div>
+                    <!-- Hourly Forecast -->
+                    <div class="card-body border-top border-bottom">
+                        <div class="row text-center">
+                            <div class="col-2">
+                                <strong class="d-block mb-2">ΤΩΡΑ</strong>
+                                <img id="wrapper-icon-hour-now" src="" alt="">
+                                <strong class="d-block" id="wrapper-hour-now"></strong>
+                            </div>
+                            <div class="col-2">
+                                <strong id="wrapper-time1" class="d-block mb-2"></strong>
+                                <img id="wrapper-icon-hour1" src="" alt="">
+                                <strong class="d-block" id="wrapper-hour1"></strong>
+                            </div>
+                            <div class="col-2">
+                                <strong id="wrapper-time2" class="d-block mb-2"></strong>
+                                <img id="wrapper-icon-hour2" src="" alt="">
+                                <strong class="d-block" id="wrapper-hour2"></strong>
+                            </div>
+                            <div class="col-2">
+                                <strong id="wrapper-time3" class="d-block mb-2"></strong>
+                                <img id="wrapper-icon-hour3" src="" alt="">
+                                <strong class="d-block" id="wrapper-hour3"></strong>
+                            </div>
+                            <div class="col-2">
+                                <strong id="wrapper-time4" class="d-block mb-2"></strong>
+                                <img id="wrapper-icon-hour4" src="" alt="">
+                                <strong class="d-block" id="wrapper-hour4"></strong>
+                            </div>
+                            <div class="col-2">
+                                <strong id="wrapper-time5" class="d-block mb-2"></strong>
+                                <img id="wrapper-icon-hour5" src="" alt="">
+                                <strong class="d-block" id="wrapper-hour5"></strong>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Daily Forecast -->
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <strong>Σήμερα</strong>
+                            </div>
+                            <div class="col-md-2">
+                                <img id = "wrapper-icon-today" src="" alt="icon-today">
+                            </div>
+                            <div class="col-md-4">
+                                <span id="wrapper-forecast-temp-today"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <strong>Αύριο</strong>
+                            </div>
+                            <div class="col-md-2">
+                                <img id = "wrapper-icon-tommorow" src="" alt="icon-tommorow">
+                            </div>
+                            <div class="col-md-4">
+                                <span id="wrapper-forecast-temp-tommorow"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <strong>Μεθάυριο</strong>
+                            </div>
+                            <div class="col-md-2">
+                                <img id = "wrapper-icon-dat" src="" alt="icon-dat">
+                            </div>
+                            <div class="col-md-4">
+                                <span id="wrapper-forecast-temp-dat"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- MDB -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- Custom scripts -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+</body>
+
+</html>
