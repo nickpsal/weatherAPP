@@ -22,11 +22,23 @@ function showPosition(position) {
     let restUrl = "&units=metric&lang=el&exclude=minutely,alerts&"
     let apikeyUrl = "appid=" + apiKey;
     let url = url1 + laturl + lonurl + restUrl + apikeyUrl;
-    fetch(url)
-        .then((response) => response.json())
-        .then((data) => {
-            getData(data);
-        });
+    console.log(url);
+    $.ajax({
+        url:url,
+        method: "GET",
+        dataType: "JSON",
+        success: function (response) {
+            console.log(response);
+            getData(response);
+        },
+        error: function(response) {
+            var message = response.responseText;
+            message = message.replace("{","");
+            message = message.replace("}","");
+            message = message.replace(/"/g, "");
+            alert(message);
+        }
+    });
 }
 
 function getData(data) {
