@@ -27,9 +27,9 @@ function showPosition(position) {
         url:url,
         method: "GET",
         dataType: "JSON",
-        success: function (response) {
-            console.log(response);
-            getData(response);
+        success: function (data) {
+            console.log(data);
+            printData(data);
         },
         error: function(response) {
             var message = response.responseText;
@@ -41,11 +41,9 @@ function showPosition(position) {
     });
 }
 
-function getData(data) {
-    let country = data.timezone;
-    country = country.toUpperCase();
-    let desc = data.current.weather[0].description;
-    desc = desc.toUpperCase();
+function printData(data) {
+    let country = data.timezone.toUpperCase();
+    let desc = data.current.weather[0].description.toUpperCase();
     let temp = Math.round(data.current.temp);
     let pressure = data.current.pressure;
     let humidity = data.current.humidity;
